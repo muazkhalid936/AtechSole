@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="hero-back pt-10 flex px-12 bg-primary h-[100vh]">
+    <div className="hero-back pt-40 flex flex-col lg:flex-row px-12 bg-primary h-[130vh]">
       <div className="flex flex-col justify-center">
         <p className="text-3xl text-white font-bold text-center">
           Decode Complexities With Our Enterprise Services
