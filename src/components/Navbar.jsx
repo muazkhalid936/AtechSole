@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { FiMenu } from "react-icons/fi";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -32,7 +32,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`py-5 items-center flex justify-between px-12 fixed w-full transition-all duration-500 z-50 ${
+      className={`py-5 items-center flex justify-between px-5 lg:px-12 fixed w-full transition-all duration-500 z-50 ${
         isScrolled ? "bg-white" : "md:bg-transparent bg-white"
       } ${isVisible ? "top-0" : "-top-20"}`}
     >
@@ -74,6 +74,9 @@ const Navbar = () => {
         >
           Schedule a call
         </Link>
+      </div>
+      <div className="lg:hidden">
+        <FiMenu className="text-5xl cursor-pointer border py-2  w-16 rounded-3xl" />
       </div>
     </div>
   );

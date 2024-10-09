@@ -1,10 +1,15 @@
-import React from 'react'
-import Hero from '../components/Hero'
+import React from "react";
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import Offers from "../components/Offers";
 
 const Home = () => {
   return (
-    <Hero />
-  )
-}
+    <>
+      <Hero />
+      <Offers />
+    </>
+  );
+};
 
-export default Home
+export default Home;
