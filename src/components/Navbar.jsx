@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FiMenu } from "react-icons/fi";
+import { Link, useLocation } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Get current location
+
   let lastScrollTop = 0;
 
   const handleScroll = () => {
@@ -30,53 +34,151 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Determine the active link based on current location
+  const getLinkClass = (path) => {
+    return location.pathname === path ? "text-primary" : "";
+  };
+
   return (
-    <div
-      className={`py-5 items-center flex justify-between px-5 lg:px-12 fixed w-full transition-all duration-500 z-50 ${
-        isScrolled ? "bg-white" : "md:bg-transparent bg-white"
-      } ${isVisible ? "top-0" : "-top-20"}`}
-    >
-      <div>
-        <h1
-          className={` font-bold cursor-pointer text-4xl ${
-            isScrolled ? "text-primary" : "md:text-white text-primary"
-          } `}
-        >
-          ATechsole
-        </h1>
-      </div>
-
+    <div className="flex flex-col">
       <div
-        className={`md:flex gap-5 hidden font-semibold ${
-          isScrolled ? "text-black" : "text-light"
-        }`}
+        className={`py-4 md:py-5 items-center flex justify-between px-5 lg:px-12 lg:fixed w-full transition-all duration-500 z-50 ${
+          isScrolled ? "bg-white" : "md:bg-transparent bg-white"
+        } ${isVisible ? "top-0" : "-top-20"}`}
       >
-        <Link to={"/"} className="cursor-pointer">
-          Home
-        </Link>
-        <Link to={"/About"} className="cursor-pointer">
-          About
-        </Link>
-        <Link to={"/Services"} className="cursor-pointer">
-          Services
-        </Link>
-        <Link to={"/Contact"} className="cursor-pointer">
-          Contact
-        </Link>
-      </div>
+        <div>
+          <h1
+            className={`font-bold cursor-pointer text-4xl ${
+              isScrolled ? "text-primary" : "md:text-white text-primary"
+            }`}
+          >
+            ATechsole
+          </h1>
+        </div>
 
-      <div className="hidden md:flex">
-        <Link
-          to={"/Call"}
-          className={`cursor-pointer rounded-full px-5 py-2 ${
-            isScrolled ? "bg-primary text-white" : "bg-white text-primary"
+        {/* Links */}
+        <div
+          className={`md:flex gap-5 hidden font-semibold ${
+            isScrolled ? "text-black" : "text-light"
           }`}
         >
-          Schedule a call
-        </Link>
+          <Link
+            to="/"
+            className={`cursor-pointer ${
+              isScrolled ? "hover:text-primary duration-500 ease-in-out" : ""
+            }  ${isScrolled ? getLinkClass("/") : ""}`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/About"
+            className={`cursor-pointer ${
+              isScrolled ? "hover:text-primary duration-500 ease-in-out" : ""
+            } ${isScrolled ? getLinkClass("/About") : ""}`}
+          >
+            About
+          </Link>
+          <Link
+            to="/Services"
+            className={`cursor-pointer ${
+              isScrolled ? "hover:text-primary duration-500 ease-in-out" : ""
+            }${isScrolled ? getLinkClass("/Services") : ""}`}
+          >
+            Services
+          </Link>
+          <Link
+            to="/Contact"
+            className={`cursor-pointer ${
+              isScrolled ? "hover:text-primary duration-500 ease-in-out" : ""
+            } ${isScrolled ? getLinkClass("/Contact") : ""}`}
+          >
+            Contact
+          </Link>
+        </div>
+
+        {/* Call to action */}
+        <div className="hidden md:flex">
+          <Link
+            to="/Call"
+            className={`cursor-pointer rounded-full px-5 py-2 ${
+              isScrolled ? "bg-primary text-white" : "bg-white text-primary"
+            }`}
+          >
+            Schedule a call
+          </Link>
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="lg:hidden">
+          <button
+            onClick={toggleMenu}
+            className={`${
+              isMenuOpen ? "border-4" : "border"
+            } border-gray-300 rounded-full p-2 outline-none focus:outline-none active:scale-95 transition-transform`}
+          >
+            {isMenuOpen ? (
+              <FiMenu className="text-4xl" />
+            ) : (
+              <FiMenu className="text-4xl" />
+            )}
+          </button>
+        </div>
       </div>
-      <div className="lg:hidden">
-        <FiMenu className="text-5xl cursor-pointer border py-2  w-16 rounded-3xl" />
+
+    <div className="justify-center flex">
+    <hr
+        className={`transition-all w-11/12  duration-500 ease-in-out ${
+          isMenuOpen ? "opacity-100" : "opacity-0"
+        }`}
+      />
+    </div>
+
+      {/* Mobile menu overlay with transition */}
+      <div
+        className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden bg-white flex flex-col items-start ml-5 font-semibold gap-5 justify-center ${
+          isMenuOpen ? "h-[30vh] opacity-100" : "h-0 opacity-0"
+        }`}
+      >
+        <Link
+          to="/"
+          className={`cursor-pointer hover:text-primary duration-500 ease-in-out ${getLinkClass(
+            "/"
+          )}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Home
+        </Link>
+        <Link
+          to="/About"
+          className={`cursor-pointer hover:text-primary duration-500 ease-in-out ${getLinkClass(
+            "/About"
+          )}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          About
+        </Link>
+        <Link
+          to="/Services"
+          className={`cursor-pointer hover:text-primary duration-500 ease-in-out${getLinkClass(
+            "/Services"
+          )}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Services
+        </Link>
+        <Link
+          to="/Contact"
+          className={`cursor-pointer hover:text-primary duration-500 ease-in-out ${getLinkClass(
+            "/Contact"
+          )}`}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          Contact
+        </Link>
       </div>
     </div>
   );
