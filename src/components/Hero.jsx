@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 const Hero = () => {
   return (
-    <div className="hero-back gap-10 py-40 flex flex-col lg:flex-row px-12 bg-primary h-[180vh] lg:h-[130vh]">
-      <div className="flex lg:w-1/2 flex-col gap-10 justify-center">
+    <div className="hero-back   bg-primary h-auto">
+     <div className=" mx-5 sm:mx-20 md:mx-16 lg:mx-20 gap-10 py-20 md:py-32 lg:py-40 flex flex-col lg:flex-row ">
+
+
+
+     <div className="flex lg:w-1/2 flex-col gap-10 justify-center">
        <motion.div 
         initial={{y:-70 }}
         animate={{ y:0 }}
@@ -14,10 +18,10 @@ const Hero = () => {
 
 
 
-       <h1 className="text-4xl text-white font-bold text-center">
+       <h1 className=" text-4xl text-white font-bold text-center">
           Decode Complexities With Our Enterprise Services
         </h1>
-        <p className="text-light text-center">
+        <p className="text-light text-justify ">
           We build, repair, and manage enterprise software development, security
           opterations, and data-base infrastructure to bring seamless efficiency
           to table
@@ -46,6 +50,9 @@ const Hero = () => {
       <img className="rounded-lg" src="src\assets\hero.jpg" />
       </motion.div>
       </div>
+
+
+     </div>
     </div>
   );
 };

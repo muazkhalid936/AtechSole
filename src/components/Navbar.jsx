@@ -46,23 +46,24 @@ const Navbar = () => {
   return (
     <div className="flex flex-col">
       <div
-        className={`py-4 md:py-5 items-center flex justify-between px-5 lg:px-12 lg:fixed w-full transition-all duration-500 z-50 ${
+        className={`py-4 px-5 sm:px-10  flex justify-between md:py-5 items-center lg:fixed w-full transition-all ${
+          isMenuOpen ? "border-b-2" : ""
+        } lg:border-none duration-500 z-50 ${
           isScrolled ? "bg-white" : "md:bg-transparent bg-white"
         } ${isVisible ? "top-0" : "-top-20"}`}
       >
         <div>
           <h1
-            className={`font-bold cursor-pointer text-4xl ${
-              isScrolled ? "text-primary" : "md:text-white text-primary"
+            className={`font-bold text-primary cursor-pointer text-4xl ${
+              isScrolled ? "text-primary" : "text-primary lg:text-white"
             }`}
           >
             ATechsole
           </h1>
         </div>
 
-        {/* Links */}
         <div
-          className={`md:flex gap-5 hidden font-semibold ${
+          className={`lg:flex gap-5 hidden font-semibold ${
             isScrolled ? "text-black" : "text-light"
           }`}
         >
@@ -100,8 +101,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Call to action */}
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
           <Link
             to="/Call"
             className={`cursor-pointer rounded-full px-5 py-2 ${
@@ -129,23 +129,22 @@ const Navbar = () => {
         </div>
       </div>
 
-    <div className="justify-center flex">
-    <hr
-        className={`transition-all w-11/12  duration-500 ease-in-out ${
-          isMenuOpen ? "opacity-100" : "opacity-0"
-        }`}
-      />
-    </div>
+      <div className="justify-center flex">
+        <hr
+          className={`transition-all w-11/12  duration-500 ease-in-out ${
+            isMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      </div>
 
-      {/* Mobile menu overlay with transition */}
       <div
-        className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden bg-white flex flex-col items-start ml-5 font-semibold gap-5 justify-center ${
+        className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden bg-white flex flex-col items-start ml-5 font-semibold gap-5  ${
           isMenuOpen ? "h-[30vh] opacity-100" : "h-0 opacity-0"
         }`}
       >
         <Link
           to="/"
-          className={`cursor-pointer hover:text-primary duration-500 ease-in-out ${getLinkClass(
+          className={`cursor-pointer hover:text-primary duration-500 ease-in-out justify-start flex ${getLinkClass(
             "/"
           )}`}
           onClick={() => setIsMenuOpen(false)}
