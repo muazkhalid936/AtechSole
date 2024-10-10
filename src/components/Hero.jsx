@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
   return (
     <div className="hero-back   bg-primary h-auto">
-     <div className=" mx-5 sm:mx-20 md:mx-16 lg:mx-20 gap-10 py-20 md:py-32 lg:py-40 flex flex-col lg:flex-row ">
+     <div className=" gap-10 container py-40 flex flex-col lg:flex-row ">
 
 
 
@@ -39,7 +39,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className=" w-full lg:w-1/2">
+      <div className=" w-full flex justify-center lg:w-1/2">
       <motion.div
       
       initial={{ scale: 0.2 }} // Starts small at 50% of its size

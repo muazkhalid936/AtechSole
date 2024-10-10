@@ -46,9 +46,7 @@ const Navbar = () => {
   return (
     <div className="flex flex-col">
       <div
-        className={`py-4 px-5 sm:px-10  flex justify-between md:py-5 items-center lg:fixed w-full transition-all ${
-          isMenuOpen ? "border-b-2" : ""
-        } lg:border-none duration-500 z-50 ${
+        className={`py-4 px-5 sm:px-10  flex justify-between md:py-5 items-center lg:fixed w-full transition-all ${isMenuOpen?"border-b-2":""} lg:border-none duration-500 z-50 ${
           isScrolled ? "bg-white" : "md:bg-transparent bg-white"
         } ${isVisible ? "top-0" : "-top-20"}`}
       >
