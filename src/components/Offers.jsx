@@ -8,7 +8,7 @@ const Offers = () => {
   return (
     <div className="p-s flex flex-col lg:flex-row gap-10">
       <div className="flex container flex-col lg:flex-row justify-center gap-10">
-        <div className="w-full lg:w-1/3">
+        <div className="w-full hover:-translate-y-4 ease-in-out duration-500 lg:w-1/3">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ const Offers = () => {
           </motion.div>
         </div>
 
-        <div className="w-full lg:w-1/3">
+        <div className="w-full hover:-translate-y-4 ease-in-out duration-500 lg:w-1/3">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ const Offers = () => {
           </motion.div>
         </div>
 
-        <div className="w-full lg:w-1/3">
+        <div className="w-full hover:-translate-y-4 ease-in-out duration-500 lg:w-1/3">
           <motion.div
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
