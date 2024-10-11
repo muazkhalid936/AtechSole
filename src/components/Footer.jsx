@@ -7,7 +7,7 @@ import { FaAngleRight } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="bg-footer flex flex-col">
-      <div className="container-footer py-20 grid md:grid-cols-2 lg:grid-cols-4">
+      <div className="container footer-s grid md:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-5">
           <div className="text-white text-xl">Address</div>
           <p className="text-footer-text  text-base flex gap-5 items-center">
