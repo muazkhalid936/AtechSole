@@ -10,7 +10,7 @@ const Features = () => {
   return (
     <div className="flex justify-center   my-40">
       <div className="flex container  flex-col justify-center items-center">
-        <InView triggerOnce={true} threshold={0.1}>
+        <InView triggerOnce={true} threshold={0.01}>
           {({ inView, ref }) => (
             <motion.div
               ref={ref}
@@ -30,14 +30,14 @@ const Features = () => {
           )}
         </InView>
         <div className="flex mt-10 flex-col lg:flex-row justify-between gap-5">
-          <InView triggerOnce={true} threshold={0.1}>
+          <InView triggerOnce={true} threshold={0.01}>
             {({ inView, ref }) => (
               <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 200 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="w-1/4"
+                className="w-full lg:w-1/4"
               >
                 <FeatureCard
                   Icon={BiEdit}
@@ -47,53 +47,53 @@ const Features = () => {
               </motion.div>
             )}
           </InView>
-          <InView triggerOnce={true} threshold={0.1}>
+          <InView triggerOnce={true} threshold={0.01}>
             {({ inView, ref }) => (
               <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 200 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="w-1/4"
+                className="w-full lg:w-1/4"
               >
                 <FeatureCard
-                  Icon={BiEdit}
-                  detail="We offer our Clients to make customization opportunity anytime, Whenever he wants."
-                  heading="Fully Customizable"
+                  Icon={BsArrowRepeat}
+                  detail="Enabling independently designed applications to work together."
+                  heading="App Integration"
                 />
               </motion.div>
             )}
           </InView>
-          <InView triggerOnce={true} threshold={0.1}>
+          <InView triggerOnce={true} threshold={0.01}>
             {({ inView, ref }) => (
               <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 200 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="w-1/4"
+                className="w-full lg:w-1/4"
               >
                 <FeatureCard
-                  Icon={BiEdit}
-                  detail="We offer our Clients to make customization opportunity anytime, Whenever he wants."
-                  heading="Fully Customizable"
+                  Icon={FaLaptopCode}
+                  detail="We develop apps and Websites with high Resolution."
+                  heading="High Resolution"
                 />
               </motion.div>
             )}
           </InView>
-          <InView triggerOnce={true} threshold={0.1}>
+          <InView triggerOnce={true} threshold={0.01}>
             {({ inView, ref }) => (
               <motion.div
                 ref={ref}
                 initial={{ opacity: 0, y: 200 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="w-1/4"
+                className="w-full lg:w-1/4"
               >
                 <FeatureCard
-                  Icon={BiEdit}
-                  detail="We offer our Clients to make customization opportunity anytime, Whenever he wants."
-                  heading="Fully Customizable"
+                  Icon={FaDrawPolygon}
+                  detail="We offer our clients to make consultancy 24/7."
+                  heading="24/7 Consultancy"
                 />
               </motion.div>
             )}

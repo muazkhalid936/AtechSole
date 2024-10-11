@@ -4,17 +4,18 @@ import Services from "../components/Services";
 import Offers from "../components/Offers";
 import Features from "../components/Features";
 import AdvanceFeature from "../components/AdvanceFeature";
+import Work from "../components/Work";
 
 const Home = () => {
   return (
     <>
-    <div className="home">
-
-      <Hero />
-      <Offers />
-      <Features />
-      <AdvanceFeature />
-    </div>
+      <div className="home">
+        <Hero />
+        <Offers />
+        <Features />
+        <AdvanceFeature />
+        <Work />
+      </div>
     </>
   );
 };
