@@ -18,6 +18,9 @@
 .footer-s{
   padding: 80px 40px !important;
 }
+.custom-ease {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
 .container  {
   width: 100%;
   padding-right: var(--bs-gutter-x, 0.75rem);
