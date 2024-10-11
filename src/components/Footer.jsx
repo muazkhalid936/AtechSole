@@ -58,7 +58,7 @@ const Footer = () => {
 
         <div className="h-full flex flex-col justify-between">
           <div className="text-white text-xl">Newsletter</div>
-          <p className="text-footer-text text-base text-justify">
+          <p className="text-footer-text text-base my-5 md:my-0 text-justify">
             We are going to launch a new education system Website. For More
             Details Emial us
           </p>
@@ -76,7 +76,30 @@ const Footer = () => {
       </div>
 
       <div className="container">
-        <hr />
+        <hr  className="border-footer-text"/>
+
+        <div class="py-5">
+          <div class="flex justify-between">
+            <div class="w-full lg:w-1/2 text-center  mb-3">
+              ©{" "}
+              <a class="text-white underline" href="https://ATechSole.com">
+                ATechSole
+              </a>
+              , All Right Reserved. Designed By{" "}
+              <a class="text-white underline" href="https://ATechSole.com">
+                ATechSole
+              </a>
+            </div>
+            <div class=" w-full lg:w-1/2 text-center ">
+              <div class=" text-white flex justify-center gap-10">
+                <a href="/" className="hover:text-footer-text hover:underline">Home</a>
+                <a href="" className="hover:text-footer-text hover:underline">Cookies</a>
+                <a href="" className="hover:text-footer-text hover:underline">Help</a>
+                <a className="hover:text-footer-text hover:underline" href="">FQAs</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
