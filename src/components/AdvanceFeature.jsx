@@ -65,7 +65,7 @@ const AdvanceFeature = () => {
           </InView>
         </div>
 
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col-reverse lg:flex-row">
           <InView triggerOnce={true} threshold={0.01}>
             {({ inView, ref }) => (
               <motion.div
@@ -147,7 +147,7 @@ const AdvanceFeature = () => {
               >
                 <div className="container lg:mx-5 my-10 flex flex-col text-start justify-center">
                   <div className="flex my-5 gap-10 items-center">
-                    <h1 className="text-4xl font-bold">01</h1>
+                    <h1 className="text-4xl font-bold">03</h1>
                     <p className="font-semibold text-xl">Courses We Offer</p>
                   </div>
                   <div>
