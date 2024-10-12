@@ -25,7 +25,7 @@ const Footer = () => {
           className="w-full "
         >
           <div className="bg-footer flex flex-col">
-            <div className="container gap-10 footer-s grid md:grid-cols-2 lg:grid-cols-4">
+            <div className="container  bg-footer gap-10 footer-s grid md:grid-cols-2 lg:grid-cols-4">
               <div className="flex flex-col gap-5">
                 <div className="text-white text-xl">Address</div>
                 <p className="text-footer-text  text-base flex gap-5 items-center">
@@ -159,7 +159,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="container">
+            <div className="container bg-footer">
               <hr className="border-footer-text" />
 
               <div class="py-5 ">

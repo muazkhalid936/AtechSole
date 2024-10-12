@@ -4,7 +4,7 @@ import Hero_pic from '../assets/hero.jpg'
 import { motion } from "framer-motion";
 const Hero = () => {
   return (
-    <div className="hero-back   bg-primary h-auto">
+    <div className="hero-back    h-auto">
       <div className=" gap-10 container py-40 flex flex-col lg:flex-row ">
         <div className="flex lg:w-1/2 flex-col gap-10 justify-center">
           <motion.div
