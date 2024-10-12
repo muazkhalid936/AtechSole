@@ -7,6 +7,7 @@ export default {
         primary: "rgba(22, 22, 156, 0.5)",
         light: "#EDF5FF",
         "over-light": "#f8f9fa",
+        card:"#f2f2f2",
         footer: "#343a40",
         "footer-text": "#858585",
       },

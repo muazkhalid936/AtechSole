@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
-import { FaCheckCircle } from "react-icons/fa";
+import About_pic from '../assets/about.jpg'
 const AboutStart = () => {
   return (
     <div className="p-s bg-over-light">
@@ -13,7 +13,7 @@ const AboutStart = () => {
                 ref={ref}
                 initial={{ opacity: 0, y: 200 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 className="w-full lg:w-1/2"
               >
                 <div className="container lg:mx-5 my-10 flex flex-col text-start justify-center">
@@ -52,10 +52,10 @@ const AboutStart = () => {
                 ref={ref}
                 initial={{ opacity: 0, scale: 0.2 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
                 className="w-full lg:w-1/2"
               >
-                <img src="src\assets\about.jpg" />
+                <img src={About_pic} />
               </motion.div>
             )}
           </InView>
