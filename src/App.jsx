@@ -8,6 +8,9 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import Services from "./pages/Services";
 import Hero from "./components/Hero";
 import Contact from "./pages/Contact";
+import Feature from "./pages/Feature";
+import OverView from "./pages/OverView";
+import Edu from "./components/Edu";
 const App = () => {
   return (
     <div>
@@ -18,6 +21,9 @@ const App = () => {
         <Route path="/About" element={<About />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path="/Feature" element={<Feature />} />
+        <Route path="/Overview" element={<OverView />} />
+        <Route path="/Education" element={<Edu />} />
       </Routes>
       <Footer />
       <ScrollToTopButton />
