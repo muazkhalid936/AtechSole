@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa";
+import { animate } from "framer-motion";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,16 +10,21 @@ const ScrollToTopButton = () => {
     if (window.pageYOffset > 300) {
       setIsVisible(true);
       setTimeout(() => {
-        setIsSlow(false); }, 1000);
+        setIsSlow(false);
+      }, 1000);
     } else {
       setIsVisible(false);
-      setIsSlow(true); }
+      setIsSlow(true);
+    }
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+    animate(window.pageYOffset, 0, {
+      duration: 2,
+      ease: [0.7, 0, 0.2, 1],
+      onUpdate: (latest) => {
+        window.scrollTo(0, latest);
+      },
     });
   };
 
