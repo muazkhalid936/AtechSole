@@ -6,8 +6,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // Get current location
-
+  const location = useLocation();
   let lastScrollTop = 0;
 
   const handleScroll = () => {
@@ -38,7 +37,6 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Determine the active link based on current location
   const getLinkClass = (path) => {
     return location.pathname === path ? "text-primary" : "";
   };

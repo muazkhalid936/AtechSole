@@ -70,7 +70,7 @@ const Work = () => {
                     <div className="absolute left-6 top-0 w-px  h-77p-2 lg:h-77p bg-primary"></div>
 
                     <li className="flex items-start">
-                      <div className="bg-primary text-white w-16 h-12 flex items-center justify-center rounded-full relative z-10">
+                      <div className="bg-primary text-white p-3 flex items-center justify-center rounded-full relative z-10">
                         <span>
                           <IoSettingsSharp className="text-2xl" />
                         </span>
@@ -88,7 +88,7 @@ const Work = () => {
                     </li>
 
                     <li className="flex items-start">
-                      <div className="bg-primary text-white w-16 h-12 flex items-center  justify-center rounded-full relative z-10">
+                      <div className="bg-primary text-white p-3 flex items-center  justify-center rounded-full relative z-10">
                         <FaIdCard className="text-2xl" />
                       </div>
 
@@ -104,7 +104,7 @@ const Work = () => {
                     </li>
 
                     <li className="flex items-start">
-                      <div className="bg-primary text-white  w-20 h-12 flex items-center justify-center rounded-full relative z-10">
+                      <div className="bg-primary text-white  p-3 flex items-center justify-center rounded-full relative z-10">
                         <TiTick className="text-3xl" />
                       </div>
 

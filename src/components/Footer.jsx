@@ -6,15 +6,22 @@ import { FaAngleRight } from "react-icons/fa";
 import { GrSend } from "react-icons/gr";
 import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <InView triggerOnce={true} threshold={0.01}>
       {({ inView, ref }) => (
         <motion.div
           ref={ref}
-          initial={{ opacity: 0,}}
-          animate={inView ? { opacity: 1, } : {}}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="w-full "
         >
           <div className="bg-footer flex flex-col">
@@ -32,43 +39,110 @@ const Footer = () => {
                   <IoMdMail className="text-xl" />
                   info@ATechSole.com
                 </p>
-              </div>
-              <div className="flex flex-col justify-between">
-                <div className="text-white text-xl">Quick Link</div>
 
-                <p className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white cursor-pointer hover:underline items-center text-footer-text">
+                <p className="flex  text-white gap-1">
+                  <div
+                    onClick={() => navigate("/About")}
+                    className="bg-transparent border-footer-text border p-3 items-center justify-center group hover:bg-white flex duration-500 ease-in-out cursor-pointer  rounded-full"
+                  >
+                    {" "}
+                    <FaTwitter
+                      className="group-hover:text-black
+                   text-lg  duration-500 ease-in-out "
+                    />
+                  </div>
+                  <div
+                    onClick={() => navigate("/About")}
+                    className="bg-transparent border-footer-text border p-3  items-center justify-center group hover:bg-white flex duration-500 ease-in-out cursor-pointer  rounded-full"
+                  >
+                    {" "}
+                    <FaFacebookF
+                      className="group-hover:text-black
+                   text-xl  duration-500 ease-in-out "
+                    />
+                  </div>
+                  <div
+                    onClick={() => navigate("/About")}
+                    className="bg-transparent border-footer-text border p-3  items-center justify-center group hover:bg-white flex duration-500 ease-in-out cursor-pointer  rounded-full"
+                  >
+                    {" "}
+                    <FaInstagram
+                      className="group-hover:text-black
+                   text-xl duration-500 ease-in-out "
+                    />
+                  </div>
+                  <div
+                    onClick={() => navigate("/About")}
+                    className="bg-transparent border-footer-text border p-3  items-center justify-center group hover:bg-white flex duration-500 ease-in-out cursor-pointer  rounded-full"
+                  >
+                    {" "}
+                    <FaLinkedinIn
+                      className="group-hover:text-black
+                    duration-500 ease-in-out text-xl "
+                    />
+                  </div>
+                </p>
+              </div>
+              <div className="flex h-auto lg:max-h-[35vh] flex-col justify-between">
+                <div className="text-white text-xl pb-5">Quick Link</div>
+
+                <p
+                  onClick={() => navigate("/About")}
+                  className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white cursor-pointer hover:underline items-start -ml-1 text-footer-text"
+                >
                   <FaAngleRight /> About
                 </p>
-                <p className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline cursor-pointer items-center text-footer-text">
+                <p
+                  onClick={() => navigate("/Contact")}
+                  className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline cursor-pointer items-start -ml-1 text-footer-text"
+                >
                   <FaAngleRight /> Contact
                 </p>
-                <p className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline cursor-pointer items-center text-footer-text">
-                  <FaAngleRight /> Privacy Policy
+                <p
+                  onClick={() => navigate("/Feature")}
+                  className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline cursor-pointer items-start -ml-1 text-footer-text"
+                >
+                  <FaAngleRight /> Features
                 </p>
-                <p className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline items-center cursor-pointer text-footer-text">
-                  <FaAngleRight /> Terms & COnditions
+                <p
+                  onClick={() => navigate("/Overview")}
+                  className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline items-start -ml-1 cursor-pointer text-footer-text"
+                >
+                  <FaAngleRight /> Overview
                 </p>
               </div>
-              <div className="flex flex-col justify-between">
-                <div className="text-white text-xl">Industries</div>
+              <div className="flex lg:max-h-[35vh] flex-col justify-between">
+                <div className="text-white text-xl pb-5">Industries</div>
 
-                <p className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white cursor-pointer hover:underline items-center text-footer-text">
+                <p
+                  onClick={() => navigate("/Education")}
+                  className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white cursor-pointer hover:underline items-start -ml-1 text-footer-text"
+                >
                   <FaAngleRight /> Education
                 </p>
-                <p className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline cursor-pointer items-center text-footer-text">
+                <p
+                  onClick={() => navigate("/Business")}
+                  className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline cursor-pointer items-start -ml-1 text-footer-text"
+                >
                   <FaAngleRight /> Businesses
                 </p>
-                <p className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline cursor-pointer items-center text-footer-text">
+                <p
+                  onClick={() => navigate("/Health")}
+                  className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline cursor-pointer items-start -ml-1 text-footer-text"
+                >
                   <FaAngleRight /> Health
                 </p>
-                <p className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline items-center cursor-pointer text-footer-text">
+                <p
+                  onClick={() => navigate("/Retail")}
+                  className="flex gap-4 h-8 hover:text-lg ease-in-out duration-500 hover:text-white hover:underline items-start -ml-1 cursor-pointer text-footer-text"
+                >
                   <FaAngleRight /> Retail
                 </p>
               </div>
 
-              <div className="h-full flex flex-col justify-between">
+              <div className="h-full flex lg:max-h-[35vh] flex-col justify-between">
                 <div className="text-white text-xl">Newsletter</div>
-                <p className="text-footer-text text-base my-5 md:my-0 text-justify">
+                <p className="text-footer-text text-base my-5  md:my-0 text-justify">
                   We are going to launch a new education system Website. For
                   More Details Emial us
                 </p>
@@ -88,8 +162,8 @@ const Footer = () => {
             <div className="container">
               <hr className="border-footer-text" />
 
-              <div class="py-5">
-                <div class="flex justify-between">
+              <div class="py-5 ">
+                <div class="flex flex-col lg:flex-row justify-between">
                   <div class="w-full lg:w-1/2 text-center  mb-3">
                     ©{" "}
                     <a
@@ -115,20 +189,20 @@ const Footer = () => {
                         Home
                       </a>
                       <a
-                        href=""
+                        href="/"
                         className="hover:text-footer-text hover:underline"
                       >
                         Cookies
                       </a>
                       <a
-                        href=""
+                        href="/"
                         className="hover:text-footer-text hover:underline"
                       >
                         Help
                       </a>
                       <a
                         className="hover:text-footer-text hover:underline"
-                        href=""
+                        href="/"
                       >
                         FQAs
                       </a>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Hero_pic from '../assets/hero.jpg'
 import { motion } from "framer-motion";
 const Hero = () => {
   return (
@@ -40,7 +40,7 @@ const Hero = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <img className="rounded-lg" src="src\assets\hero.jpg" />
+            <img className="rounded-lg" src={Hero_pic} />
           </motion.div>
         </div>
       </div>
