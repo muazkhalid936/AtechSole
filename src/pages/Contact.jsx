@@ -1,101 +1,195 @@
-import React from 'react'
-import { InView } from 'react-intersection-observer'
-import { motion } from 'framer-motion'
-import { IoSettingsSharp } from 'react-icons/io5'
-import Process from '../assets/hero.jpg'
+import React, { useState } from "react";
+import { InView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdLocationPin } from "react-icons/md";
+import { IoMdMail } from "react-icons/io";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <div className="p-s ">
-    <div className="container py-28 flex flex-col gap-10">
-      <div className="flex flex-col lg:flex-row">
-        <InView triggerOnce={true} threshold={0.01}>
-          {({ inView, ref }) => (
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 200 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="w-full lg:w-1/2"
-            >
-              <img src={Process} />
-            </motion.div>
-          )}
-        </InView>
-        <InView triggerOnce={true} threshold={0.01}>
-          {({ inView, ref }) => (
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 200 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="w-full lg:w-1/2"
-            >
-           
-              <div className="max-w-2xl mx-auto p-6">
-                <h1 className="text-start text-4xl font-bold mb-8">
-                  Three Simple Steps To Start Working With
-                </h1>
-                <ul className="relative space-y-12">
-                  <div className="absolute left-6 top-0 w-px  h-77p-2 lg:h-77p bg-primary"></div>
+      <div className="container py-28 flex flex-col gap-10">
+        <div className="flex flex-col gap-10 lg:flex-row">
+          <InView triggerOnce={true} threshold={0.01}>
+            {({ inView, ref }) => (
+              <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: 200 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="w-full lg:w-1/2"
+              >
+                <div className="flex flex-col gap-8">
+                  <div className="flex flex-col gap-5">
+                    <p className="text-5xl font-bold ">Get In Touch</p>
+                    <p>
+                      For sharing ideas and exploring your business, make
+                      contact with us. We are available for you 24/7.
+                    </p>
+                  </div>
 
-                  <li className="flex items-start">
-                    <div className="bg-primary text-white p-3 flex items-center justify-center rounded-full relative z-10">
-                      <span>
-                        <IoSettingsSharp className="text-2xl" />
-                      </span>
+                  <div className="flex gap-5">
+                    <div>
+                      <FaPhoneAlt className="bg-blue-500 text-white text-4xl rounded-full p-2" />
                     </div>
-
-                    <div className="ml-6">
-                      <h2 className="text-xl font-semibold">
-                        Share Your Idea
-                      </h2>
-                      <p className="text-gray-700">
-                        Share your idea with our developers for which purpose
-                        you want to work with us.
+                    <div className="flex flex-col gap-2">
+                      <p className="">Call Us</p>
+                      <p className="text-xl font-semibold">+92-325-3344552</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-5">
+                    <div>
+                      <IoMdMail className="bg-blue-500 text-white text-4xl rounded-full p-2" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <p className="">Mail Us</p>
+                      <p className="text-xl font-semibold">
+                        info@ATechSole.com
                       </p>
                     </div>
-                  </li>
-
-                  <li className="flex items-start">
-                    <div className="bg-primary text-white p-3 flex items-center  justify-center rounded-full relative z-10">
-                      <IoSettingsSharp className="text-2xl" />
+                  </div>
+                  <div className="flex gap-5">
+                    <div>
+                      <MdLocationPin className="bg-blue-500 text-white text-4xl rounded-full p-2" />
                     </div>
-
-                    <div className="ml-6">
-                      <h2 className="text-xl font-semibold">
-                        Complete your requirements
-                      </h2>
-                      <p className="text-gray-700">
-                        Provide complete details of your business, and then
-                        make a deal with developers.
+                    <div className="flex flex-col gap-2">
+                      <p className="">Our Office</p>
+                      <p className="text-xl font-semibold">
+                        2nd Floor Asharfia complex Muslim town Lahore
                       </p>
                     </div>
-                  </li>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </InView>
+          <InView triggerOnce={true} threshold={0.01}>
+            {({ inView, ref }) => (
+              <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: 200 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="w-full lg:w-1/2"
+              >
+                <div className="py-20 lg:py-5">
+                  <form>
+                    <div className="flex gap-5 flex-col">
+                      <div className="flex flex-col md:flex-row gap-5 md:gap-3">
+                        <div className="relative w-full">
+                          <input
+                            id="nameInput"
+                            className="border w-full border-borderColor rounded-lg h-12 pl-2 pt-4 pb-1 duration-300 ease-in-out 
+                            outline-none focus:border-blue-700 focus:ring ring-blue-200 z-10 peer"
+                            placeholder=" "
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                          />
+                          <label
+                            htmlFor="nameInput"
+                            className={`absolute duration-300 
+                            ${
+                              name
+                                ? "top-3 left-0 scale-75 -translate-y-3 text-gray-400"
+                                : "top-1/2 scale-100 left-2 -translate-y-1/2 text-gray-500"
+                            }
+                            transform origin-0 pointer-events-none`}
+                          >
+                            Your Name
+                          </label>
+                        </div>
 
-                  <li className="flex items-start">
-                    <div className="bg-primary text-white  p-3 flex items-center justify-center rounded-full relative z-10">
-                      <IoSettingsSharp className="text-3xl" />
+                        <div className="relative w-full">
+                          <input
+                            id="emailInput"
+                            className="border w-full border-borderColor rounded-lg h-12 pl-2 pt-4 pb-1 duration-300 ease-in-out 
+                            outline-none focus:border-blue-700 focus:ring ring-blue-200 z-10 peer"
+                            placeholder=" "
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                          />
+                          <label
+                            htmlFor="emailInput"
+                            className={`absolute duration-300 
+                            ${
+                              email
+                                ? "top-3 left-0 scale-75 -translate-y-3 text-gray-400"
+                                : "top-1/2 scale-100 left-2 -translate-y-1/2 text-gray-500"
+                            }
+                            transform origin-0 pointer-events-none`}
+                          >
+                            Your Email
+                          </label>
+                        </div>
+                      </div>
+
+                      <div className="relative w-full">
+                        <input
+                          id="subjectInput"
+                          className="border border-borderColor w-full rounded-lg h-12 pl-2 pt-4 pb-1 duration-300 ease-in-out 
+                            outline-none focus:border-blue-700 focus:ring ring-blue-200 z-10 peer"
+                          placeholder=" "
+                          type="text"
+                          value={subject}
+                          onChange={(e) => setSubject(e.target.value)}
+                        />
+                        <label
+                          htmlFor="subjectInput"
+                          className={`absolute duration-300 
+                            ${
+                              subject
+                                ? "top-3 left-0 scale-75 -translate-y-3 text-gray-400"
+                                : "top-1/2 scale-100 left-2 -translate-y-1/2 text-gray-500"
+                            }
+                            transform origin-0 pointer-events-none`}
+                        >
+                          Subject
+                        </label>
+                      </div>
+
+                      <div className="relative w-full">
+                        <textarea
+                          id="messageInput"
+                          className="border border-borderColor w-full h-32 rounded-lg  pl-2 pt-4 pb-1 duration-300 ease-in-out 
+                            outline-none focus:border-blue-700 focus:ring ring-blue-200 z-10 peer"
+                          placeholder=" "
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                        />
+                        <label
+                          htmlFor="messageInput"
+                          className={`absolute duration-300 
+                            ${
+                              message
+                                ? "top-3 left-0 scale-75 -translate-y-3 text-gray-400"
+                                : " top-5 scale-100 left-2 -translate-y-1/2 text-gray-500"
+                            }
+                            transform origin-0 pointer-events-none`}
+                        >
+                          Your Message
+                        </label>
+                      </div>
                     </div>
 
-                    <div className="ml-6">
-                      <h2 className="text-xl font-semibold">Start Working</h2>
-                      <p className="text-gray-700">
-                        After sharing ideas and providing complete
-                        requirements, our developers will start working on
-                        your project.
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </motion.div>
-          )}
-        </InView>
+
+                    <p className="text-white bg-primary  inline-block rounded-full px-10 py-3 border border-blue-500  ease-in-out duration-300  ring-gray-400 ring-opacity-50
+                    hover:ring-2 cursor-pointer my-3">Send Message</p>
+                  </form>
+                </div>
+              </motion.div>
+            )}
+          </InView>
+        </div>
       </div>
     </div>
-  </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

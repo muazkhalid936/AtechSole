@@ -11,6 +11,7 @@ export default {
         footer: "#343a40",
         Portfolio: "#353535",
         "footer-text": "#858585",
+        borderColor: "#ced4da",
       },
       height: {
         "77p": "77%",
