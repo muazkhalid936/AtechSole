@@ -1,9 +1,13 @@
-import React from 'react'
-
+import React from "react";
+import Service from "../components/Service";
+import Portfolio from "../components/Portfolio";
 const Services = () => {
   return (
-    <div>Services</div>
-  )
-}
+    <div>
+      <Service />
+      <Portfolio />
+    </div>
+  );
+};
 
-export default Services
+export default Services;

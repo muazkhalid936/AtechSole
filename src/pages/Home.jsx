@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../components/Hero";
-import Services from "../components/Services";
+import Services from "../components/Service";
 import Offers from "../components/Offers";
 import Features from "../components/Features";
 import AdvanceFeature from "../components/AdvanceFeature";

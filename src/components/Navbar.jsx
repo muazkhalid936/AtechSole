@@ -38,13 +38,15 @@ const Navbar = () => {
   };
 
   const getLinkClass = (path) => {
-    return location.pathname === path ? "text-primary" : "";
+    return location.pathname === path ? " text-primary" : "";
   };
 
   return (
     <div className="flex flex-col">
       <div
-        className={`py-4 px-5 sm:px-10  flex justify-between md:py-5 items-center lg:fixed w-full transition-all ${isMenuOpen?"border-b-2":""} lg:border-none duration-500 z-50 ${
+        className={`py-4 px-5 sm:px-10  flex justify-between md:py-5 items-center lg:fixed w-full transition-all ${
+          isMenuOpen ? "border-b-2" : ""
+        } lg:border-none duration-500 z-50 ${
           isScrolled ? "bg-white" : "md:bg-transparent bg-white"
         } ${isVisible ? "top-0" : "-top-20"}`}
       >
@@ -112,14 +114,12 @@ const Navbar = () => {
         <div className="lg:hidden">
           <button
             onClick={toggleMenu}
-            className={`${
-              isMenuOpen ? "border-4" : "border"
-            } border-gray-300 rounded-full p-2 outline-none focus:outline-none active:scale-95 transition-transform`}
+            className={` border  border-gray-300 rounded-full p-2 outline-none focus:outline-none active:scale-95 transition-transform`}
           >
             {isMenuOpen ? (
-              <FiMenu className="text-4xl" />
+              <FiMenu className="text-2xl duration-500 ease-in-out rotate-90" />
             ) : (
-              <FiMenu className="text-4xl" />
+              <FiMenu className="duration-500 ease-in-out text-2xl" />
             )}
           </button>
         </div>

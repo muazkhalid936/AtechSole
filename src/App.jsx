@@ -5,7 +5,7 @@ import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import Services from "./components/Services";
+import Services from "./pages/Services";
 import Hero from "./components/Hero";
 const App = () => {
   return (

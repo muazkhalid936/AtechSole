@@ -6,7 +6,7 @@ import Team from '../components/Team'
 const About = () => {
   return (
     <div>
-      <Hero />
+    
       <Offers />
       <AboutStart />
     <Team />
