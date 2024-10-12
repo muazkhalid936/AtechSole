@@ -15,7 +15,7 @@ const Team = () => {
             software development company
           </p>
         </div>
-        <div className="grid grid-col sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="team-card  gap-3 ">
           <TeamCard name="Mustansar Riaz" post="CEO & Founder" pic={User1} />
           <TeamCard
             name="Ghazanfar Riaz"
