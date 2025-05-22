@@ -1,7 +1,7 @@
 import React from "react";
 import User1 from "../assets/mustansar.jpg";
 import User2 from "../assets/ghazanfar.jpg";
-import User3 from "../assets/Attiq.jpg";
+
 import User4 from "../assets/sardar wali.jpg";
 import TeamCard from "./TeamCard";
 const Team = () => {
@@ -22,11 +22,7 @@ const Team = () => {
             post="CEO & Digital Marketer"
             pic={User2}
           />
-          <TeamCard
-            name="Hafiz Attiq Rehman"
-            post="Web Developer"
-            pic={User3}
-          />
+    
           <TeamCard name="Sardar Wali Khan" post="Web Developer" pic={User4} />
         </div>
       </div>
